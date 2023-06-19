@@ -3,13 +3,13 @@ package Test06.Test0619_P;
 
 public class Haena {
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        SolutionHn sol = new SolutionHn();
         System.out.println(sol.solution("3people unFollowed me"));
         System.out.println(sol.solution("for the last week"));
     }
 }
 
-class Solution {
+class SolutionHn {
     public String solution(String s) {
         StringBuilder sb = new StringBuilder(s);
 
