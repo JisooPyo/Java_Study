@@ -39,7 +39,7 @@ public class Jinhyuk {
                 answer -= a;
             }
         }
-        //answer을 return해준다.
+        //answer을 return해준다!
         return answer;
     }
 }
