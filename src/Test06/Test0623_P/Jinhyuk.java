@@ -1,63 +1,98 @@
 // lv.1 공원 산책
 package Test06.Test0623_P;
+
+import java.util.Arrays;
+
 public class Jinhyuk {
-
-
     public static void main(String[] args) {
-
         Jinhyuk jinhyuk = new Jinhyuk();
 
-//        System.out.println(Jinhyuk.solution());
+        String[] t1_1 = {
+                "SOO",
+                "OOO",
+                "OOO"
+        };
+        String[] t1_2 = {"E 2", "S 2", "W 1"};
+
+        String[] t2_1 = {
+                "SOO",
+                "OXX",
+                "OOO"
+        };
+        String[] t2_2 = {"E 2", "S 2", "W 1"};
+
+        String[] t3_1 = {
+                "OSO",
+                "OOO",
+                "OXO",
+                "OOO"
+        };
+        String[] t3_2 = {"E 2", "S 3", "W 1"};
+
+        System.out.println(Arrays.toString(jinhyuk.solution(t1_1, t1_2)));
+        System.out.println(Arrays.toString(jinhyuk.solution(t2_1, t2_2)));
+        System.out.println(Arrays.toString(jinhyuk.solution(t3_1, t3_2)));
 
     }
 
     public int[] solution(String[] park, String[] routes) {
+        int[] answer = new int[2];
+        int H = park.length;
+        int W = park[0].length();
+        int x = 0;
+        int y = 0;
 
-        int[] answer = new int[2]; //배열의 선언 초기화
-        //answer[0], answer[1]에 좌표들 넣을 예정
-//        int[][] array;
-        int x = 0; // 가로 좌표 X
-        int y = 0; // 세로 좌표 X
-        int H = park.length; //공원의 세로 길이 H
-        int W = park[0].length(); //공원의 가로길이 W *구글링
-//        array = new int[8][9];
-
-        char[][] parkArray = new char[H][W]; //이차원 배열 생성 길이알려주고 초기화
-
-        for (int i = 0; i < H; i++) { //for i문으로 세로 위치
-            parkArray[i] = park[i].toCharArray(); //이차원배열에 정보저장, toCharArray는 문자를 배열로 변화후 이차원 배열에 저장 *구글링
-            for (int j = 0; j < W; j++) { //for j문으로 가로 위치
-                if (parkArray[i][j] == 'S') { //시작위치를 S로 Char이기 때문에 한글자로만
-                    x = i; //가로 값 저장하고
-                    y = j; //세로 값 저장!
+        char[][] parkArray = new char[H][W];
+        for (int i = 0; i < H; i++) {
+            parkArray[i] = park[i].toCharArray();
+            for (int j = 0; j < W; j++) {
+                if (parkArray[i][j] == 'S') {
+                    x = i;
+                    y = j;
                 }
             }
         }
-//        for (int i = 0; i <8; i++) {
-//            for (int j = 0; j <9; j++) {
-//                array[i][j]=
-//            }
-//        }
-//        int[][] start = new int[8][9];
-        boolean flag = true;
-        switch (flag) {
-            case 'e' :
-            case 's' :
-            case 'w' : 
-            case 'n' :
+
+        for (String route : routes) {
+            String[] splitRoute = route.split(" ");
+            char direction = splitRoute[0].charAt(0);
+            int distance = Integer.parseInt(splitRoute[1]);
+
+            switch (direction) {
+                case 'N':
+                    if (x - distance < 0) break;
+                    for (int i = 1; i <= distance && x - i >= 0; i++) {
+                        if (parkArray[x - i][y] == 'X') break;
+                        x--;
+                    }
+                    break;
+                case 'S':
+                    if (x + distance >= H) break;
+                    for (int i = 1; i <= distance && x + i < H; i++) {
+                        if (parkArray[x + i][y] == 'X') break;
+                        x++;
+                    }
+                    break;
+                case 'W':
+                    if (y - distance < 0) break;
+                    for (int i = 1; i <= distance && y - i >= 0; i++) {
+                        if (parkArray[x][y - i] == 'X') break;
+                        y--;
+                    }
+                    break;
+                case 'E':
+                    if (y + distance >= W) break;
+                    for (int i = 1; i <= distance && y + i < W; i++) {
+                        if (parkArray[x][y + i] == 'X') break;
+                        y++;
+                    }
+                    break;
+            }
         }
 
+        answer[0] = x;
+        answer[1] = y;
 
-        for (String route : routes) { // 이동하는 방향과 거리를 알려주는 문장을 분리해서
-            String[] Rt = route.split(" "); // 명령을 분리해서 0은 방향 1은 거리
-            char Direction = Rt[0].charAt(0);
-            int Distance = //....
-
-
-            answer[0] = x;
-            answer[1] = y;
-
-            return answer;
-        }
+        return answer;
     }
 }
