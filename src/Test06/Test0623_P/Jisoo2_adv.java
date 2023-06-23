@@ -82,18 +82,12 @@ public class Jisoo2_adv {
 			y += unitY;
 
 			// 단위거리만큼 이동했을 때, 공원 범위를 벗어나면 false
-			if (x < 0 || x >= width || y < 0 || y >= height) {
+			if (x < 0 || x >= height || y < 0 || y >= width) {
 				return false;
 			}
 
 			// 단위거리만큼 이동했을 때, 장애물이 있으면 false
-			// 분명히 위 if문에서 width나 height 값 넘기면 알아서 false하라고 했는데
-			// 여기서 자꾸 야!!! index가 범위를 넘어버리좌나!!!! 해서 그냥 try-catch로 잡아서 처리..
-			try {
-				if (park[x].charAt(y) == 'X') {
-					return false;
-				}
-			} catch (StringIndexOutOfBoundsException e) {
+			if (park[x].charAt(y) == 'X') {
 				return false;
 			}
 		}
