@@ -28,8 +28,8 @@ public class Jinhyuk {
             parkArray[i] = park[i].toCharArray(); //이차원배열에 정보저장, toCharArray는 문자를 배열로 변화후 이차원 배열에 저장 *구글링
             for (int j = 0; j < W; j++) { //for j문으로 가로 위치
                 if (parkArray[i][j] == 'S') { //시작위치를 S로 Char이기 때문에 한글자로만
-                    y = i; //가로 값 저장하고
-                    x = j; //세로 값 저장!
+                    x = i; //가로 값 저장하고
+                    y = j; //세로 값 저장!
                 }
             }
         }
@@ -43,7 +43,7 @@ public class Jinhyuk {
         switch (flag) {
             case 'e' :
             case 's' :
-            case 'w' :
+            case 'w' : 
             case 'n' :
         }
 
