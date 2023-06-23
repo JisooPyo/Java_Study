@@ -19,6 +19,10 @@ public class Haena {
         for (int d : sol.solution(new String[]{"OXXO", "XSXO", "XXXX"}, new String[]{"E 1", "S 1"})) {
             System.out.print(d + " ");
         }
+        System.out.println();
+        for (int d : sol.solution(new String[]{"OOO", "OSO", "OOO", "OOO"}, new String[]{"N 2", "S 2"})) {
+            System.out.print(d + " ");
+        }
     }
 }
 
