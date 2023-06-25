@@ -1,6 +1,7 @@
 // lv.1 공원 산책
 package Test06.Test0623_P;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import java.util.Arrays;
 
@@ -126,6 +127,9 @@ public class Jinhyuk {
         return answer; // 결과를 출력하낟.
 =======
 public class Jinhyuk {
+=======
+public class Jinhyuk {
+>>>>>>> db30066 (Jinhyuk_P_공원산책)
 
 
     public static void main(String[] args) {
@@ -141,8 +145,13 @@ public class Jinhyuk {
         int[] answer = new int[2]; //배열의 선언 초기화
         //answer[0], answer[1]에 좌표들 넣을 예정
 //        int[][] array;
+<<<<<<< HEAD
         int x = 0; // 가로 좌표 X
         int y = 0; // 세로 좌표 X
+=======
+        int x = 0; // 세로좌표 X
+        int y = 0; // 가로 좌표 X
+>>>>>>> db30066 (Jinhyuk_P_공원산책)
         int H = park.length; //공원의 세로 길이 H
         int W = park[0].length(); //공원의 가로길이 W *구글링
 //        array = new int[8][9];
@@ -153,8 +162,13 @@ public class Jinhyuk {
             parkArray[i] = park[i].toCharArray(); //이차원배열에 정보저장, toCharArray는 문자를 배열로 변화후 이차원 배열에 저장 *구글링
             for (int j = 0; j < W; j++) { //for j문으로 가로 위치
                 if (parkArray[i][j] == 'S') { //시작위치를 S로 Char이기 때문에 한글자로만
+<<<<<<< HEAD
                     x = i; //가로 값 저장하고
                     y = j; //세로 값 저장!
+=======
+                    x = i; //세로 값 저장하고
+                    y = j; //가로 값 저장!
+>>>>>>> db30066 (Jinhyuk_P_공원산책)
                 }
             }
         }
@@ -164,6 +178,7 @@ public class Jinhyuk {
 //            }
 //        }
 //        int[][] start = new int[8][9];
+<<<<<<< HEAD
         boolean flag = true;
         switch (flag) {
             case 'e' :
@@ -172,6 +187,8 @@ public class Jinhyuk {
             case 'n' :
         }
 
+=======
+>>>>>>> db30066 (Jinhyuk_P_공원산책)
 
         for (String route : routes) { // 이동하는 방향과 거리를 알려주는 문장을 분리해서
             String[] Rt = route.split(" "); // 명령을 분리해서 0은 방향 1은 거리
@@ -184,7 +201,10 @@ public class Jinhyuk {
 
             return answer;
         }
+<<<<<<< HEAD
 >>>>>>> dee0219327012a1a74a1acf400c2ce4ccf2f7893
+=======
+>>>>>>> db30066 (Jinhyuk_P_공원산책)
     }
 }
 
