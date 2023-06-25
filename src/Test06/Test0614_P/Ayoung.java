@@ -15,7 +15,8 @@ public class Ayoung {
         }
     }
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        Ayoung ayoung = new Ayoung();
+        Solution sol = ayoung.new Solution();
         // 테스트 케이스들
         System.out.println(sol.solution("tree"));
         System.out.println(sol.solution("match"));
