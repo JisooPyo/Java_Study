@@ -121,6 +121,7 @@ public class Jinhyuk {
                     }
                     break;
             }
+
         }
         int[] answer = {y, x}; //결과값이 세로, 가로의 형태로 요구되서 y,x로 써준다.
         return answer; // 결과를 출력하낟.
