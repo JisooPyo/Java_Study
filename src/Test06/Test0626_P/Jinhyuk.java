@@ -15,17 +15,17 @@ public class Jinhyuk {
     }
 
     public int[] solution(int n, int m) {
-        int 최소공배수 = 0;
-        int 최대공약수 = 0;
+        int lcm = 0;
+        int gcd = 0;
 
         for (int i = 1; i <= m && i <= n; i++) {
             if (n % i == 0 && m % i == 0) {
-                최대공약수 = i;
+                gcd = i;
             }
         }
-        최소공배수 = (m*n)/최대공약수;
+        lcm = (m*n)/gcd;
 
-        int[] answer = {최대공약수, 최소공배수};
+        int[] answer = {gcd, lcm};
         return answer;
     }
 }
