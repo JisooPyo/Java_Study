@@ -7,6 +7,16 @@ package Test06.Test0628_P;
 public class Jisoo2 {
     public static void main(String[] args) {
         Jisoo2 js = new Jisoo2();
+
+        long beforeTime = System.currentTimeMillis();
+
+        String test = RandomStringGenerator.generateRandomString(8000);
+        test = js.solution(test,30);
+
+        long afterTime = System.currentTimeMillis();
+
+        System.out.println("걸린 시간 : " + (afterTime - beforeTime));
+
         System.out.println(js.solution("AB", 1));
         System.out.println(js.solution("z", 1));
         System.out.println(js.solution("a B z", 4));
@@ -24,9 +34,9 @@ public class Jisoo2 {
         if (ch == ' ') {
             return ch;
         } else if (65 <= ch && ch <= 90) {
-            return (char)((ch + n - 'A') % 26 + 'A');
+            return (char) ((ch + n - 'A') % 26 + 'A');
         } else {
-            return (char)((ch + n - 'a') % 26 + 'a');
+            return (char) ((ch + n - 'a') % 26 + 'a');
         }
     }
 }
