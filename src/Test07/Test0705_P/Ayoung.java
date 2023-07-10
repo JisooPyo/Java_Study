@@ -7,7 +7,6 @@ public class Ayoung {
         System.out.println(solution("Try       HELLO   world"));
         System.out.println(solution("TRY HELLO  "));
     }
-
     public String solution(String s) {
         StringBuilder input = new StringBuilder(s); // StringBuilder의 함수를 사용하기 위해 변경
 
